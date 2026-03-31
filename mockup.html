@@ -1,0 +1,94 @@
+from adafruit_bitmap_font import bitmap_font
+
+config = {
+
+    #########################
+    # Network Configuration #
+    #########################
+
+    # WIFI Network SSID
+    'wifi_ssid': '',
+
+    # WIFI Password
+    'wifi_password': '',
+
+    ##############################
+    # Bikeshare Configuration    #
+    ##############################
+
+    # Capitol Bikeshare GBFS API (no API key needed)
+    'gbfs_status_url': 'https://gbfs.lyft.com/gbfs/2.3/dca-cabi/en/station_status.json',
+
+    # How often to refresh data (seconds). The GBFS feed updates roughly every 60s.
+    'refresh_interval': 30,
+
+    # Number of retries on failed API calls
+    'api_retries': 3,
+
+    # Station IDs to display (find yours with station_finder.py)
+    'station_ids': [
+        '0825fd75-1f3f-11e7-bf6b-3863bb334450',  # 18th & R St NW
+        '08249345-1f3f-11e7-bf6b-3863bb334450',  # 17th & K St NW
+        '0824c80d-1f3f-11e7-bf6b-3863bb334450',  # 17th & K St NW / Farragut Square
+    ],
+
+    # Display abbreviations for each station (max 6 characters recommended).
+    # Use + as intersection delimiter with no spaces. The display code adds
+    # a 1-pixel gap after + automatically for readability.
+    # Drop ordinal suffixes from numbered streets (e.g. "18th" -> "18").
+    # Non-intersection stations get a short name (e.g. "FarSq").
+    'station_names': [
+        '18+R',
+        '17+K',
+        'FarSq',
+    ],
+
+    #############################
+    # Off Hours Configuration   #
+    #############################
+
+    # adafruit.io credentials for time-based display on/off (optional).
+    # Set up a free account: https://learn.adafruit.com/adafruit-magtag/getting-the-date-time
+    'aio_username': '',
+    'aio_key': '',
+
+    # Time of day to turn board on and off - must be 24 hour "HH:MM"
+    'display_on_time': "07:00",
+    'display_off_time': "23:30",
+
+    #########################
+    # Display Configuration #
+    #########################
+
+    'matrix_width': 64,
+    'matrix_height': 32,
+    'font': bitmap_font.load_font('lib/5x7.bdf'),
+    'font_ascent': 6,
+
+    # Number of station rows
+    'num_stations': 3,
+
+    # Colors (RGB hex)
+    'header_color': 0xFF0000,       # Red for STATN, C, E, D
+    'station_name_color': 0xFF7500, # Orange
+    'classic_color': 0xFF7500,      # Orange (same as station name)
+    'ebike_color': 0x00CC00,        # Green
+    'dock_color': 0x0099FF,         # Blue
+    'loading_color': 0xFF00FF,      # Magenta (loading state)
+
+    # Pixel layout — column positions (right-edge x for right-aligned numbers)
+    'station_name_x': 0,
+    'classic_right_x': 42,
+    'ebike_right_x': 53,
+    'dock_right_x': 64,
+
+    # Pixel layout — row positions (top y for each row)
+    'header_y': 0,
+    'row_y_positions': [8, 16, 24],
+
+    # Extra gap (in pixels) inserted after the + character in station names
+    'plus_extra_gap': 1,
+
+    # Loading screen text
+    'loading_text': 'Loading',
+}
