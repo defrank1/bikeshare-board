@@ -50,8 +50,7 @@ Make sure `lib/5x7.bdf` (the bitmap font) is included.
 
 ### 4. Copy source files
 
-Copy all files from `src/` in this repo to the root of the CIRCUITPY volume:
-
+Copy the following files from this repo to the root of the CIRCUITPY volume:
 - `code.py`
 - `config.py`
 - `api.py`
