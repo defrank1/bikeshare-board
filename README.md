@@ -8,9 +8,9 @@ Based on the [dc-metro sign](https://github.com/erikrrodriguez/dc-metro) project
 
 ```
 STATN          C  E  D        (red header)
-18+R           8  4  7        (orange / green / blue numbers)
-17+K           2  2 11
-FarSq          0  1 18
+15+L           8  4  7        (orange / green / blue numbers)
+6+O           2  2 11
+Dupont          0  1 18
 ```
 
 - **Station names**: orange
